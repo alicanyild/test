@@ -1,0 +1,22 @@
+---
+title: "Test"
+output: html_document
+date: "2023-01-27"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## First attempts
+
+```{r, message=FALSE}
+library(tidyverse)
+library(wooldridge)
+data(wage1)
+```
+
+```{r}
+ggplot(wage1, aes(educ, wage, color = as.factor(female))) + geom_point() + theme_minimal() +  scale_color_manual("=1 if Female",values=c("orange","blue"))
+```
+
